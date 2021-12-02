@@ -11,12 +11,11 @@ public class PlatformMovement : MonoBehaviour
     {
         myRigidbody = gameObject.GetComponent<Rigidbody>();
     }
-
+    
     void Update()
     {
-        Vector3 m_Input = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        Vector3 myInput = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
 
-        myRigidbody.MovePosition(transform.position + m_Input * Time.deltaTime * playerSpeed);
-
+        myRigidbody.MovePosition(transform.position + myInput * Time.deltaTime * playerSpeed);
     }
 }
