@@ -9,7 +9,7 @@ public class Death : MonoBehaviour
     GameObject ball;
     TextMeshProUGUI livesMesh;
     Rigidbody ballRigidbody;
-    int lives = 3;
+    public int lives = 10;
     // Start is called before the first frame update
     void Start()
     {
