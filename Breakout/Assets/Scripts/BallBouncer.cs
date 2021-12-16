@@ -16,6 +16,13 @@ public class BallBouncer : MonoBehaviour
         ballRigidbody = myBall.GetComponent<Rigidbody>();
     }
 
+    public void UpdateBall()
+    {
+        myBall = GameObject.FindGameObjectWithTag("Ball");
+        ballRigidbody = myBall.GetComponent<Rigidbody>();
+    }
+
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ball"))

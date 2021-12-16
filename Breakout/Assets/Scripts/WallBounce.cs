@@ -20,11 +20,9 @@ public class WallBounce : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-
         if (!collision.gameObject.CompareTag("Platform"))
         {
             ballRigidbody.velocity = Vector3.Reflect(oldVelocity, collision.GetContact(0).normal);
-            Debug.Log("Wall");
         }
     }
 }

@@ -14,7 +14,7 @@ public class BrickBreaker : MonoBehaviour
     GameObject highScoreText;
     TextMeshProUGUI highScoreMesh;
     public GameObject explotion;
-    int score;
+    public int score;  
     string highScorePath;
     string highScore;
 
@@ -32,10 +32,14 @@ public class BrickBreaker : MonoBehaviour
         {
             File.Create(highScorePath);
             StartCoroutine(WaitForFile());
+            highScore = "0";
+            highScoreMesh.SetText("Highscore:" + highScore);
+        }
+        else
+        {
             highScore = File.ReadAllText(highScorePath);
             highScoreMesh.SetText("Highscore:" + highScore);
         }
-
 
         //wait some time or else you get IO error
     }
@@ -51,8 +55,6 @@ public class BrickBreaker : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Brick"))
         {
-
-
             //Get Brick
             thisBrick = collision.gameObject;
 
